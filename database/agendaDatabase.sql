@@ -1,5 +1,9 @@
 -- SUGESTÃO DE DATABASE
 
+
+-- Estudar o comando abaixo:
+-- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- Cria o banco de dados
 CREATE DATABASE clinica_fisio;
 USE clinica_fisio;

@@ -16,3 +16,12 @@ Quanto a organização de pastas, dado que nosso projeto terá uma lógica de lo
     - Foram criados dois arquivos: login.js e agendamento.js, dentro de uma pasta "routes";
     - O arquivo index.js é nosso "main" e continua fora de qualquer pasta, apensas invoando as lógicas dos demais arquivos.
     - Como é necessário a cripotgrafia somente em usuários, ela não foi aplicada em agendamento.js.
+
+Autenticação JWT:
+    Geração de tokens seguros antes das nossas rotas serem acessadas. O arquivo de autenticação é colcoado numa pasta separada, chamada de middleware. 
+    Para que funcione, temos de LEMBRAR O PESSOAL DO FRONT de inserir:
+        Authorization: Bearer <token-aqui>
+
+Obs.: Linha 6 do login.js -> estudar melhor algo mais dentro das práticas do mercado do que o nome "const SECRET = 'segredo_jwt; "
+
+O arquivo horarios.js foi criado ara organizar as rotas relacionadas aos horários disponíveis (criar, listar, editar, excluir horários que a fisioterapeuta gerencia). Ajuda ambém na organização do código.

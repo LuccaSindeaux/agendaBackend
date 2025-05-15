@@ -1,24 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const autenticarToken = require('../middleware/autenticarToken');
 
-router.get('/horarios', async (req, res) => {
-  const db = req.app.locals.db;
-  try {
-    const result = await db.query(`
-      SELECT id, 
-             TO_CHAR(data, 'DD/MM/YYYY') AS data, 
-             TO_CHAR(hora, 'HH24:MI') AS hora 
-      FROM horarios_disponiveis 
-      WHERE ocupado = FALSE 
-      ORDER BY data, hora
-    `);
-    res.json(result.rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-router.post('/agendar', async (req, res) => {
+router.post('/agendar', autenticarToken, async (req, res) => {
   const db = req.app.locals.db;
   const { nome, email, telefone, horarioId } = req.body;
 
