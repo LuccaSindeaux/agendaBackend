@@ -1,6 +1,7 @@
+const pool = require("../config/database");
 const express = require('express');
 const router = express.Router();
-const { autenticarToken, autorizarTipo } = require('../middleware');
+const { autenticarToken, autorizarTipo } = require('../middlewares');
 
 // Listar horários disponíveis (qualquer usuário autenticado)
 router.get('/', autenticarToken, async (req, res) => {

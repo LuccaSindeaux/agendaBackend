@@ -1,6 +1,7 @@
+const pool = require("../config/database");
 const express = require('express');
 const router = express.Router();
-const autenticarToken = require('../middleware/autenticarToken');
+const autenticarToken = require('../middlewares/autenticarToken');
 
 router.post('/agendar', autenticarToken, async (req, res) => {
   const db = req.app.locals.db;
