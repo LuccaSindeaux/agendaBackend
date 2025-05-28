@@ -1,0 +1,79 @@
+/* Estilo para Login e Recuperação de Senha */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+  margin-top: 50px;
+  background-color: #f8f9fa;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.auth-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #e2a091;
+  text-align: center;
+}
+
+.auth-form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: #e2a091;
+  outline: none;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e2a091;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: rgb(218, 145, 128);
+}
+
+.auth-form p {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.auth-form a {
+  color: #e2a091;
+  text-decoration: none;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}

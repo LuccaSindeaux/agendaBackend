@@ -1,0 +1,27 @@
+{
+  "name": "agendabackend",
+  "version": "1.0.0",
+  "description": "Backend da agenda da cadeira de Gestão Ágil 2025/1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuccaSindeaux/agendaBackend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuccaSindeaux/agendaBackend/issues"
+  },
+  "homepage": "https://github.com/LuccaSindeaux/agendaBackend#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
+  }
+}
