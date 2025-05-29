@@ -23,9 +23,8 @@ CREATE TABLE usuarios (
 CREATE TABLE pacientes (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE  NOT NULL,
   telefone VARCHAR(20),
-  email_login VARCHAR(100) UNIQUE,
   senha VARCHAR(255)
 );
 

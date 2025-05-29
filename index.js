@@ -1,26 +1,47 @@
+require("dotenv").config();
+const port = process.env.PORT;
+
+const db = require("/.database.js");
+
 const express = require('express');
+const app = express();
+
+app.listen(port);
+
+app.use(express.json());
+
+//mostrar todos os clientes
+app.get("/pacientes", async (req, res) =>{
+  const pacientes = await db.selecionarPacientes;
+  res.json(pacientes);
+})
+
+//Busca de um único cliente por nome
+app.get("/paciente/:nome", async (req, res) =>{
+  const paciente = await db.selecionarPaciente(req.params.nome);
+  res.json(paciente);
+})
+
+//Inserção de pacientes
+app.post("/pacientes", async (req, res) =>{
+  await db.inserirPaciente(req.body);
+  res.sendStatus(201);
+})
+
+//Faz o Update de pacientes 
+app.patch("/pacientes/:id", async (req, res) =>{
+  await db.atualizarPaciente(req.params.id, req.body);
+  res.sendStatus(200);
+})
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { Pool } = require('pg');
-
-// Cria a aplicação express (sempre primeiro)
-const app = express();
 
 // Configura middlewares globais antes das rotas
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configura conexão com banco
-const db = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'clinica_fisio',
-  password: 'sua_senha',
-  port: 5432
-});
-
 // Disponibiliza o db para as rotas via app.locals
-app.locals.db = db;
 
 
 const loginRoutes = require('./routes/login');
